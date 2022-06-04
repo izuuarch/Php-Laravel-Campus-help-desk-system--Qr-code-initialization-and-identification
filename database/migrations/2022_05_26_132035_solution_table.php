@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Helpquestions extends Migration
+class SolutionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Helpquestions extends Migration
      */
     public function up()
     {
-        Schema::create('helpquestions', function (Blueprint $table) {
+        Schema::create('solutions', function (Blueprint $table) {
             $table->id();
-            $table->string('title_row');
-            $table->string('image_row');
-            $table->text('shnote_db');
+            $table->string('solutionnote');
+            $table->integer('problemid');
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\helpquestion;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Str;
 class AskQuestionController extends Controller
 {
     public function ask(){
@@ -18,8 +18,11 @@ class AskQuestionController extends Controller
             'shortnote' => 'required',
             'uploadedFile' => 'image|nullable|max:1999'
         ]);
+
         $savequestion= new helpquestion;
         $savequestion->title_row = $req->input('title');
+        $trackid = Str::random(10);
+        $savequestion->trackid = $trackid;
         if($req->hasFile('uploadedFile')){
             $fileext = $req->file('uploadedFile')->getClientOriginalName();
             $filename = pathinfo($fileext, PATHINFO_FILENAME);

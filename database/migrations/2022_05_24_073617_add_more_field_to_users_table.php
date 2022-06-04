@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Helpquestions extends Migration
+class AddMoreFieldToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class Helpquestions extends Migration
      */
     public function up()
     {
-        Schema::create('helpquestions', function (Blueprint $table) {
-            $table->id();
-            $table->string('title_row');
-            $table->string('image_row');
-            $table->text('shnote_db');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->bigInteger('phonenumber');
+            $table->bigInteger('regnumber');
         });
     }
 
@@ -29,6 +26,8 @@ class Helpquestions extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            
+        });
     }
 }

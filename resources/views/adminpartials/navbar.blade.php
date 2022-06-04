@@ -2,7 +2,7 @@
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
@@ -18,39 +18,28 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
-
-
-
-
 <li class="nav-item">
-  <a class="nav-link" href="#">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Admin Profile</span></a>
+  <a class="nav-link" href="/admin/students">
+    <i class="fas fa-users"></i>
+    <span>Students</span></a>
 </li>
-
-<!-- Divider -->
-<hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-  Addons
-</div>
+<li class="nav-item">
+  <a class="nav-link" href="/admin/issues">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Issues</span></a>
+</li>
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="/admin/resolved">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
+    <span>Resolved issues</span></a>
 </li>
-
+<li class="nav-item">
+  <a class="nav-link" href="/admin/unresolved">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>UnResolved issues</span></a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

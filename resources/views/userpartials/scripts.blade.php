@@ -15,3 +15,9 @@
   <script src="{{ asset('user/vendor/chart.js/Chart.min.js') }"></script>
   <script src="{{ asset('user/js/demo/chart-area-demo.js') }"></script>
   <script src="{{ asset('user/js/demo/chart-pie-demo.js') }"></script>
+  <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>

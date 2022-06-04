@@ -17,8 +17,8 @@
            <form action="{{ route('question') }}" method="POST" enctype="multipart/form-data">
              @csrf
            <div class="form-group">
-               <label for="title">Title</label>
-               <input type="text" class="form-control" name="title" id="title" placeholder="title">
+               <label for="title">Subject</label>
+               <input type="text" class="form-control" name="title" id="title" placeholder="Subject">
            </div>
 
             <div class="form-group">
@@ -28,7 +28,7 @@
 
            <div>
                <label for="description">Short Note on Your request</label>
-               <textarea name="shortnote" id="shnote" class="form-control" placeholder="description" rows="10"></textarea>
+               <textarea name="shortnote" id="shnote" class="ckeditor php form-control" placeholder="description" rows="10"></textarea>
            </div>
            <div class="form-group">
            <button class="btn btn-outline-success btn-lg" type="submit">create post</button>

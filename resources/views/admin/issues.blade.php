@@ -1,6 +1,12 @@
-@include('userpartials/header')
-@include('userpartials/navbar')
-<!-- Begin Page Content -->
+@include('adminpartials/header')
+@include('adminpartials/navbar')
+@include('messages')
+   @if (session('titlefield'))
+	<div class="alert alert-success">{{ session('titlefield') }}</div>
+	@endif
+  @if (session('shfield'))
+	<div class="alert alert-success">{{ session('shfield') }}</div>
+	@endif
 <div class="row">
 @forelse($issues as $issue)
 <div class="col-md-4">
@@ -14,8 +20,7 @@
             <p class="card-text">
             {{ $issue->shnote_db; }}
             </p>
-            <a href="/user/issues/{{ $issue->id; }}" class="btn btn-secondary">Edit</a>
-            <a href="/user/viewissue/{{ $issue->id; }}" class="btn btn-success">View</a>
+            <a href="/admin/issues/{{ $issue->trackid; }}" class="btn btn-success">View</a>
             <form action="/user/deleteissue/{{ $issue->id; }}" method="POST">
              @csrf
             <button class="btn btn-danger" type="submit">Delete</button>
@@ -36,5 +41,5 @@
 @endforelse
   <!-- Content Row -->
 </div>
-@include('userpartials/scripts')
-@include('userpartials/footer')
+@include('adminpartials/scripts')
+@include('adminpartials/footer')
