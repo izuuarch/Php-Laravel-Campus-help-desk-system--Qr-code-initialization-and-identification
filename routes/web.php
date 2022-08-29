@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -49,11 +49,12 @@ Route::prefix('user')->middleware(['auth','IsUser'])->group(function(){
     Route::get('/fastsearch/{trackid}', [FasttrackController::class, 'fastsearch']);
 });
 Route::prefix('admin')->middleware(['auth','IsAdmin'])->group(function(){
-    Route::get('/dashboard', [Admindashboardcontroller::class, 'index']);
-    Route::get('/students', [Studentscontroller::class, 'students']);
-    Route::get('/issues', [AdminControllerIssuescontroller::class, 'issues']);
-    Route::get('/issues/{issueid}', [AdminControllerIssuescontroller::class, 'viewissue']);
-    Route::get('/resolved', [Resolvedcontroller::class, 'resolved']);
-    Route::get('/unresolved', [Resolvedcontroller::class, 'unresolved']);
+    Route::get('/dashboard', [Admindashboardcontroller::class, 'index'])->name('dashboard');
+    Route::get('/students', [Studentscontroller::class, 'students'])->name('students');
+    Route::get('/issues', [AdminControllerIssuescontroller::class, 'issues'])->name('issues');
+    Route::get('/issues/{issueid}', [AdminControllerIssuescontroller::class, 'viewissue'])->name('viewissue');
+    Route::get('/resolved', [Resolvedcontroller::class, 'resolved'])->name('resolved');
+    Route::get('/unresolved', [Resolvedcontroller::class, 'unresolved'])->name('unresolved');
+    // posts requests
     Route::post('/resolveissue', [AdminControllerIssuescontroller::class, 'resolveissue']);
 });

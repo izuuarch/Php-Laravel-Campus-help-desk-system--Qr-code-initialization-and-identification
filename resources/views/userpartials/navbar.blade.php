@@ -1,12 +1,12 @@
    <!-- Sidebar -->
-   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: black; color: white;">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
   <div class="sidebar-brand-icon rotate-n-15">
-    <i class="fas fa-laugh-wink"></i>
+    <i class="fas fa-phone"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">FUNDA <sup>WEB IT</sup></div>
+  <div class="sidebar-brand-text mx-3">HELP DESK</div>
 </a>
 
 <!-- Divider -->
@@ -53,11 +53,6 @@
 
 <!-- Divider -->
 <hr class="sidebar-divider">
-
-<!-- Heading -->
-<div class="sidebar-heading">
-  Addons
-</div>
 
 
 <!-- Divider -->

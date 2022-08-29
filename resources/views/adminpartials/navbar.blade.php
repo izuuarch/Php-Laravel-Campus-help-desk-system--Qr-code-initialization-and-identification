@@ -1,12 +1,12 @@
    <!-- Sidebar -->
-   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: black; color: white;">
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
   <div class="sidebar-brand-icon rotate-n-15">
-    <i class="fas fa-laugh-wink"></i>
+    <i class="fas fa-phone"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">FUNDA <sup>WEB IT</sup></div>
+  <div class="sidebar-brand-text mx-3">ADMIN</div>
 </a>
 
 <!-- Divider -->
@@ -14,29 +14,29 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="/admin/dashboard">
+  <a class="nav-link" href="{{ route('dashboard')}}">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="/admin/students">
+  <a class="nav-link" href="{{ route('students')}}">
     <i class="fas fa-users"></i>
     <span>Students</span></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="/admin/issues">
+  <a class="nav-link" href="{{ route('issues')}}">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Issues</span></a>
 </li>
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="/admin/resolved">
+  <a class="nav-link" href="{{ route('resolved')}}">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Resolved issues</span></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="/admin/unresolved">
+  <a class="nav-link" href="{{ route('unresolved')}}">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>UnResolved issues</span></a>
 </li>

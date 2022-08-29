@@ -17,7 +17,7 @@
            <form action="{{ route('question') }}" method="POST" enctype="multipart/form-data">
              @csrf
            <div class="form-group">
-               <label for="title">Subject</label>
+               <label for="title">Title Of Your Issue</label>
                <input type="text" class="form-control" name="title" id="title" placeholder="Subject">
            </div>
 
@@ -31,7 +31,7 @@
                <textarea name="shortnote" id="shnote" class="ckeditor php form-control" placeholder="description" rows="10"></textarea>
            </div>
            <div class="form-group">
-           <button class="btn btn-outline-success btn-lg" type="submit">create post</button>
+           <button class="btn btn-outline-dark btn-lg" type="submit" style="background: black; color:white;">Drop Issue</button>
                 </div>
            </form>
        </div>

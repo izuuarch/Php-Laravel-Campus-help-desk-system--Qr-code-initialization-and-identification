@@ -21,7 +21,7 @@
             {{ $issue->shnote_db; }}
             </p>
             <a href="/admin/issues/{{ $issue->trackid; }}" class="btn btn-success">View</a>
-            <form action="/user/deleteissue/{{ $issue->id; }}" method="POST">
+            <form action="/admin/deleteissue/{{ $issue->id; }}" method="POST">
              @csrf
             <button class="btn btn-danger" type="submit">Delete</button>
             </form>

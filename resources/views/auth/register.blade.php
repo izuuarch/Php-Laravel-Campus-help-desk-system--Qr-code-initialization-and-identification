@@ -1,10 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .brand_logo_container{
+position: absolute;
+height: 100px;
+width: 100px;
+top: -75px;
+border-radius: 50%;
+padding: 10px;
+text-align: center;
+}
+.brand_logo{
+height: 150px;
+width: 150px;
+border-radius: 50%;
+border: 2px solid white;
+text-align: center;
+}
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background: black; color: #fff;">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container mb-5">
+                      <img src="{{ asset('/images/schoollogo.jpg') }}" class="brand_logo mb-5">
+                    </div>
+                  </div>
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -89,7 +112,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-warning btn-block">
                                     {{ __('Register') }}
                                 </button>
                             </div>
