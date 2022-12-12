@@ -5,22 +5,33 @@ namespace App\Http\Controllers\UserController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\helpquestion;
+use App\Services\EditIssuesService;
 use Illuminate\Support\Facades\Auth;
 
 class EditIssuesController extends Controller
 {
-    public function editissues($id){
-        $data = helpquestion::find($id);
+    public function editissues(EditIssuesService $edit,$id){
+        $data = $edit->editissues($id);
         return view('user.editissues',['editissues'=>$data]);
     }
     public function viewissue($id){
-        $view = helpquestion::find($id);
+        $view = helpquestion::withTrashed()->find($id);
         return view('user.viewissue',['viewissue'=>$view]);
     }
-    public function deleteissue($id){
+    public function destroy($id){
         $delete = helpquestion::find($id);
         $delete->delete();
         return redirect('/user/issues')->with('success',"Issue Deleted Successfully");
+    }
+    public function forcedelete($id){
+        $delete = helpquestion::withTrashed()->find($id);
+        $delete->forceDelete();
+        return redirect('/user/issues')->with('success',"Issue Deleted Successfully");
+    }
+    public function restore($id){
+        $restore = helpquestion::withTrashed()->find($id);
+        $restore->restore();
+        return redirect('/user/issues')->with('success',"Issue Restored sucessfully");
     }
     public function updateissue(Request $req, $id){
         $savequestion = helpquestion::find($id);

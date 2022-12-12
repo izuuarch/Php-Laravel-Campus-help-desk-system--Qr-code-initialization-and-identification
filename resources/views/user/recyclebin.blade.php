@@ -2,7 +2,7 @@
 @include('userpartials/navbar')
 <!-- Begin Page Content -->
 <div class="row">
-@forelse($issues as $issue)
+@forelse($trash as $issue)
 <div class="col-md-4">
     <div class="card">
     
@@ -16,11 +16,15 @@
             </p>
             <a href="issues/{{ $issue->id; }}" class="btn btn-secondary">Edit</a>
             <a href="viewissue/{{ $issue->id; }}" class="btn btn-success">View</a>
-            <form action="deleteissue/{{ $issue->id; }}" method="post">
-                @csrf
-                @method('DELETE')
-            <button class="btn btn-danger" type="submit">Delete</button>
+            <form action="forcedelete/{{ $issue->id; }}" method="POST">
+             @csrf
+             @method('DELETE')
+            <button class="btn btn-danger" type="submit">delete completely</button>
             </form>
+            <form action="restoreissue/{{ $issue->id; }}" method="POST">
+                @csrf
+               <button class="btn btn-danger" type="submit">restoreissue</button>
+               </form>
         </div>
     </div>
 </div>

@@ -20,8 +20,8 @@
             <p class="card-text">
             {{ $issue->shnote_db; }}
             </p>
-            <a href="/admin/issues/{{ $issue->trackid; }}" class="btn btn-success">View</a>
-            <form action="/admin/deleteissue/{{ $issue->id; }}" method="POST">
+            <a href="issues/{{ $issue->trackid; }}" class="btn btn-success">View</a>
+            <form action="deleteissue/{{ $issue->id; }}" method="POST">
              @csrf
             <button class="btn btn-danger" type="submit">Delete</button>
             </form>

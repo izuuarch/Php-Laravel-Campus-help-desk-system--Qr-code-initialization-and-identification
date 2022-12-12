@@ -50,6 +50,16 @@
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Fast Track</span></a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ url('/user/recyclebin') }}">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Recycle Bin</span></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ url('/user/developers') }}">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Developers</span></a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">

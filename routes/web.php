@@ -7,11 +7,13 @@ use App\Http\Controllers\AdminController\Resolvedcontroller;
 use App\Http\Controllers\AdminController\Studentscontroller;
 use App\Http\Controllers\UserController\Userdashboardcontroller;
 use App\Http\Controllers\UserController\AskQuestionController;
+use App\Http\Controllers\Usercontroller\Autoaskcontroller;
+use App\Http\Controllers\usercontroller\developerscontroller;
 use App\Http\Controllers\UserController\ReviewController;
 use App\Http\Controllers\UserController\FasttrackController;
 use App\Http\Controllers\userController\issuesController;
 use App\Http\Controllers\userController\EditIssuesController;
-
+use App\Http\Controllers\Usercontroller\Recyclecontroller;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -30,7 +32,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-// Route::get('/', [App\Http\Controllers\userController\Userdashboardcontroller::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/success', [App\Http\Controllers\HomeController::class, 'success']);
 Route::prefix('user')->middleware(['auth','IsUser'])->group(function(){
@@ -43,10 +44,15 @@ Route::prefix('user')->middleware(['auth','IsUser'])->group(function(){
     Route::get('/issues', [issuesController::class, 'issues'])->name('issues');
     Route::get('/issues/{id}', [EditIssuesController::class,'editissues']);
     Route::get('/viewissue/{id}', [EditIssuesController::class,'viewissue']);
-    Route::post('/deleteissue/{id}', [EditIssuesController::class,'deleteissue']);
+    Route::delete('/deleteissue/{id}', [EditIssuesController::class,'destroy']);
     Route::put('/question/update/{id}', [EditIssuesController::class,'updateissue']);
     Route::post('/searchtrackissue', [FasttrackController::class, 'searchtrackissue']);
     Route::get('/fastsearch/{trackid}', [FasttrackController::class, 'fastsearch']);
+    Route::get('/recyclebin', [Recyclecontroller::class, 'recyclebin']);
+    Route::delete('/forcedelete/{id}', [EditIssuesController::class,'forcedelete']);
+    Route::post('/restoreissue/{id}', [EditIssuesController::class,'restore']);
+    Route::get('/developers', [developerscontroller::class,'index']);
+    Route::get('/autoask', [Autoaskcontroller::class,'index'])->name('autoask');
 });
 Route::prefix('admin')->middleware(['auth','IsAdmin'])->group(function(){
     Route::get('/dashboard', [Admindashboardcontroller::class, 'index'])->name('dashboard');

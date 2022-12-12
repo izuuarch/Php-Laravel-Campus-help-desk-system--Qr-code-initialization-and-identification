@@ -13,7 +13,7 @@
             <p class="card-text">
             {{ $resolved->shnote_db; }}
             </p>
-            <a href="/admin/issues/{{ $resolved->trackid; }}" class="btn btn-success btn-block">View</a>
+            <a href="issues/{{ $resolved->trackid; }}" class="btn btn-success btn-block">View</a>
         </div>
     </div>
 </div>
